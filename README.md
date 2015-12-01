@@ -41,4 +41,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_report_products_ran_out_of_stock/factories'
 ```
 
-Copyright (c) 2015 Cassio S. Cabral, released under the New BSD License
+Copyright (c) 2015 Cassio S. Cabral, released under the MIT License
