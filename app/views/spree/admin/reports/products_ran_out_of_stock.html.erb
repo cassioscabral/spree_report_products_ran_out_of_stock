@@ -1,0 +1,44 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:products_ran_out_of_stock) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= link_to_with_icon 'arrow-left', Spree.t(:back_to_resource_list, resource: Spree.t(:report)), spree.admin_reports_url, class: 'btn btn-default' %>
+<% end %>
+
+<div class="well">
+  <%= search_form_for @search, :url => spree.products_ran_out_of_stock_admin_reports_path  do |s| %>
+  <div class="form-group date-range-filter">
+    <%= label_tag nil, Spree.t(:date_range) %>
+    <div class="date-range-filter row">
+      <div class="col-md-6">
+        <%= s.text_field :updated_at_gt, :class => 'datepicker datepicker-from form-control', :value => datepicker_field_value(params[:q][:updated_at_gt]) %>
+      </div>
+      <div class="col-md-6">
+        <%= s.text_field :updated_at_lt, :class => 'datepicker datepicker-to form-control', :value => datepicker_field_value(params[:q][:updated_at_lt]) %>
+    </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= button Spree.t(:search), 'search' %>
+  </div>
+  <% end %>
+</div>
+
+<table class="table table-bordered admin-report" data-hook="products_ran_out_of_stock">
+  <thead>
+    <tr>
+      <th><%= Spree.t(:name) %></th>
+      <th><%= Spree.t(:sku) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @variants.each do |variant| %>
+      <tr>
+        <td><%= variant.descriptive_name %></td>
+        <td><%= variant.sku %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
