@@ -4,6 +4,10 @@ describe Spree::Admin::ReportsController, :type => :controller do
   stub_authorization!
 
   describe 'ReportsController.available_reports' do
+    it 'should contain sales_total' do
+      expect(Spree::Admin::ReportsController.available_reports.keys.include?(:sales_total)).to be true
+    end
+
     it 'should contain products_ran_out_of_stock' do
       expect(Spree::Admin::ReportsController.available_reports.keys.include?(:products_ran_out_of_stock)).to be true
     end
