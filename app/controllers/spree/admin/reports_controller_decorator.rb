@@ -25,7 +25,7 @@ module Spree
         # ransack don't work well with includes/join
         @search = Variant.ransack(params[:q])
 
-        @variants = Variant.includes(:stock_items).where("spree_stock_items.count_on_hand == 0").references(:spree_stock_items).where("spree_variants.updated_at >= ?", params[:q][:updated_at_gt])
+        @variants = Variant.includes(:stock_items).where("spree_stock_items.count_on_hand = 0").references(:spree_stock_items).where("spree_variants.updated_at >= ?", params[:q][:updated_at_gt])
 
         if params[:q][:updated_at_lt].present?
             @variants = @variants.where("spree_variants.updated_at <= ?", params[:q][:updated_at_lt])
