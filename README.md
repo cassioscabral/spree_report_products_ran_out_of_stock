@@ -14,7 +14,7 @@ Installation
 Add spree_report_products_ran_out_of_stock to your Gemfile:
 
 ```ruby
-gem 'spree_report_products_ran_out_of_stock'
+gem 'spree_report_products_ran_out_of_stock', :git => 'https://github.com/cassioscabral/spree_report_products_ran_out_of_stock.git'
 ```
 
 Bundle your dependencies and run the installation generator:
