@@ -1,7 +1,12 @@
 SpreeReportProductsRanOutOfStock
 ================================
 
-Introduction goes here.
+This extension provides a report in the Spree backend to show all products(SKU) that ran out of stock.
+
+It will show all variants(with their descriptive name) that has zero items in the count_at_hand attribute.
+
+The result can be filtered by a range of date, based on the updated_at attribute of the variant.
+
 
 Installation
 ------------
@@ -36,4 +41,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_report_products_ran_out_of_stock/factories'
 ```
 
-Copyright (c) 2015 [name of extension creator], released under the New BSD License
+Copyright (c) 2015 Cassio S. Cabral, released under the New BSD License

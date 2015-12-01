@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_report_products_ran_out_of_stock'
   s.version     = '3.0.4'
   s.summary     = 'Spree 3.0.4 extension for reporting products that ran out of stock'
-  s.description = 'This extension lists all products(SKU) which ran out of stock in a give date range'
+  s.description = 'This extension lists all products(SKU) which ran out of stock in a given date range'
   s.required_ruby_version = '>= 2.0.0'
 
   s.author    = 'Cassio S. Cabral'
